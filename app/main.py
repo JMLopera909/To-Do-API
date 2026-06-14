@@ -44,7 +44,7 @@ def list_tasks():
 
 @app.put(
     "/tasks/{task_id}",
-    response_model=TaskUpdate,
+    response_model=TaskResponse,
     status_code=status.HTTP_200_OK,
 )
 def update_task(task_id: int, task_update: TaskUpdate):
