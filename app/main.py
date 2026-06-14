@@ -31,4 +31,13 @@ def create_task(task: TaskCreate):
 
     next_task_id += 1
 
+    print(tasks)
     return new_task
+
+@app.get(
+    "/tasks",
+    response_model=list[TaskResponse],
+    status_code=status.HTTP_200_OK,
+)
+def list_tasks():
+    return tasks
